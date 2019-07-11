@@ -38,12 +38,14 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+
 - task: SendEmail@1
   inputs:
       To: 'nithyugurujala@gmail.com'
       From: 'nithyugurujala@gmail.com'
       Subject: 'Build Notification Email'
       BodyAsHtml: false
+      Body: 'Build Notification Email'
       AddAttachment: false
       SmtpServer: 'smtp.gmail.com'
       SmtpPort: '465'
