@@ -41,6 +41,9 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
 
 
 - task: SendEmail@1
