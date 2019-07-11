@@ -39,7 +39,7 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: SendEmail@1
-   inputs:
+  inputs:
       To: 'nithyugurujala@gmail.com'
       From: 'nithyugurujala@gmail.com'
       Subject: 'Build Notification Email'
