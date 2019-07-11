@@ -15,15 +15,11 @@ variables:
   buildConfiguration: 'Release'
   majorversion: '1'
   minorversion: '0'
-  buildid: $(Build.BuildNumber)
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      $version = $(majorversion)+$(minorversion)+$(buildid)
-      $version
+  buildid: '$(Build.BuildNumber)'
+  
 
 steps:
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
