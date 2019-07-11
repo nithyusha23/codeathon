@@ -16,8 +16,6 @@ variables:
   majorversion: '1'
   minorversion: '0'
   buildid: '$(Build.BuildNumber)'
-  version: '$(majorversion)'+'.'+'$(minorversion)+'.'+'$(buildid)'
-  
 
 steps:
 - task: NuGetToolInstaller@1
