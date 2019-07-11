@@ -47,21 +47,8 @@ steps:
       scannerMode: 'MSBuild'
       projectKey: 'Codeathon'
       projectName: 'Codeathon'
+
 - task: SonarQubeAnalyze@4
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
-
-
-- task: SendEmail@1
-  inputs:
-      To: 'nithyugurujala@gmail.com'
-      From: 'nithyugurujala@gmail.com'
-      Subject: 'Build Notification Email'
-      BodyAsHtml: false
-      Body: 'Build Notification Email'
-      AddAttachment: false
-      SmtpServer: 'smtp.gmail.com'
-      SmtpPort: '465'
-      SmtpUsername: 'nithyugurujala@gmail.com'
-      SmtpPassword: 'Nithyusha23*$'
