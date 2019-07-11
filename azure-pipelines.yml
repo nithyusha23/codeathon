@@ -13,6 +13,15 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  majorversion: '1'
+  minorversion: '0'
+  buildid: $(Build.BuildNumber)
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $version = $(majorversion)+$(minorversion)+$(buildid)
+      $version
 
 steps:
 - task: NuGetToolInstaller@1
