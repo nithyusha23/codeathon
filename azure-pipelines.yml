@@ -19,7 +19,16 @@ variables:
   
 
 steps:
-
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      - task: PowerShell@2
+        inputs:
+          targetType: 'inline'
+          script: |
+            $version = $(majorversion)+$(minorversion)+$(buildid)
+            $version
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
