@@ -16,7 +16,7 @@ variables:
   majorversion: '1'
   minorversion: '0'
   buildid: '$(Build.BuildNumber)'
-  version: '$(majorversion.minorversion.buildid)'
+  version: '$(majorversion)'+'.'+'$(minorversion)+'.'+'$(buildid)'
   
 
 steps:
@@ -25,6 +25,10 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: '$(version)'
 
 - task: VSBuild@1
   inputs:
