@@ -44,10 +44,12 @@ steps:
     configuration: '$(buildConfiguration)'
 - task: SonarQubePrepare@4
   inputs:
-      SonarQube: 'SonarQube'
-      scannerMode: 'MSBuild'
-      projectKey: 'Codeathon'
-      projectName: 'Codeathon'
+    SonarQube: 'SonarQube'
+    scannerMode: 'MSBuild'
+    projectKey: 'Codeathon'
+    projectName: 'Codeathon'
+    extraProperties: |
+      sonar.cs.vstest.reportsPaths=.\\TestResults\\*.trx
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
