@@ -27,7 +27,7 @@ steps:
         inputs:
           targetType: 'inline'
           script: |
-            $version = $(majorversion)+$(minorversion)+$(buildid)
+            $version = '$(majorversion)'+'.'+'$(minorversion)'+'.'+'$(buildid)'
             $version
 - task: NuGetToolInstaller@1
 
