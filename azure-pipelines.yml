@@ -47,7 +47,7 @@ steps:
       scannerMode: 'MSBuild'
       projectKey: 'Codeathon'
       projectName: 'Codeathon'
-  - task: SonarQubeAnalyze@4
+- task: SonarQubeAnalyze@4
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
